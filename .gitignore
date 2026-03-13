@@ -1,0 +1,12 @@
+# Ignore all files in data and media directories
+data/**/*
+media/**/*
+
+# But keep .keep files to preserve directory structure
+!data/**/.keep
+!media/**/.keep
+
+# Common files to ignore
+.env
+*.log
+.DS_Store
