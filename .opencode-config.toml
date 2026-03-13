@@ -1,0 +1,49 @@
+[tool.git-commit-message]
+# Enforce conventional commits format
+template = """
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+
+Types: feat, fix, docs, style, refactor, perf, test, chore
+"""
+
+# Common scopes for this project
+common_scopes = [
+    "docker",
+    "jellyfin", 
+    "sonarr",
+    "radarr",
+    "qbittorrent",
+    "docs",
+    "config",
+    "deps"
+]
+
+# Commit message validation
+[tool.git-commit-message.rules]
+# Ensure type is present and valid
+require_type = true
+valid_types = ["feat", "fix", "docs", "style", "refactor", "perf", "test", "chore"]
+
+# Ensure description is not empty
+require_description = true
+
+# Maximum line lengths
+max_header_length = 72
+max_body_line_length = 100
+
+# Enforce lowercase for type and description
+enforce_lowercase = true
+
+# No period at end of description
+no_trailing_period = true
+
+# Use present tense (checked via description)
+present_tense = true
+
+# Breaking changes
+allow_breaking_change = true
+breaking_change_prefixes = ["BREAKING CHANGE"]
