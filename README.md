@@ -2,18 +2,19 @@
 
 A portable Docker-based media server stack including Jellyfin, Sonarr, Radarr, qBittorrent, and Prowlarr.
 
-## Quick Start
+## Platform Setup
 
-```bash
-# Clone the repository
-git clone git@github.com:abhinandval/ums-aio.git
-cd ums-aio
+Select your operating system to get started:
 
-# Start all services
-docker compose up -d
-```
+- **[macOS](README.mac.md)** - Homebrew + Colima setup guide
+- **Linux** - *Coming soon*
+- **Windows** - *Coming soon*
 
-## What's Included
+---
+
+## Overview
+
+### Services Included
 
 | Service | Port | Description |
 |---------|------|-------------|
@@ -23,15 +24,16 @@ docker compose up -d
 | **qBittorrent** | 8080 | Torrent download client |
 | **Prowlarr** | 9696 | Indexer manager for Sonarr and Radarr |
 
-## Platform-Specific Setup Guides
+### Portability
 
-Choose your operating system:
+This setup is designed to be **completely portable**:
 
-- **[macOS Setup Guide](README.mac.md)** - For Mac users using Homebrew and Colima
-- Linux - *Coming soon*
-- Windows - *Coming soon*
+- All configurations stored in `./data/`
+- All media stored in `./media/`
+- Uses relative paths - works on any machine
+- Simply copy the entire folder to move to another system
 
-## Project Structure
+### Project Structure
 
 ```
 ums-aio/
@@ -50,15 +52,6 @@ ums-aio/
     ├── tv_shows/
     └── downloads/
 ```
-
-## Portability
-
-This setup is designed to be **completely portable**:
-
-- All configurations stored in `./data/`
-- All media stored in `./media/`
-- Uses relative paths - works on any machine
-- Simply copy the entire folder to move to another system
 
 ## Common Commands
 
