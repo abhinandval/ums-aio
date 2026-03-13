@@ -17,6 +17,7 @@ common_scopes = [
     "sonarr",
     "radarr",
     "qbittorrent",
+    "prowlarr",
     "docs",
     "config",
     "deps"

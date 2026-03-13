@@ -67,6 +67,7 @@ BREAKING CHANGE: ports changed from 8xxx to 9xxx series
 - `sonarr`: Sonarr service
 - `radarr`: Radarr service
 - `qbittorrent`: qBittorrent service
+- `prowlarr`: Prowlarr service
 - `docs`: Documentation
 - `config`: Configuration files
 - `deps`: Dependencies/versions
