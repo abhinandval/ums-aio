@@ -71,3 +71,26 @@ services:
     ports:
       - 9696:9696
     restart: unless-stopped
+
+  whisparr:
+    image: lscr.io/linuxserver/whisparr:latest
+    container_name: whisparr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+    volumes:
+      - ./data/whisparr:/config
+      - ./media:/storage
+    ports:
+      - 6969:6969
+    restart: unless-stopped
+
+  flaresolverr:
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    container_name: flaresolverr
+    environment:
+      - TZ=UTC
+    ports:
+      - 8191:8191
+    restart: unless-stopped
