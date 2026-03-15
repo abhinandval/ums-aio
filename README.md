@@ -1,6 +1,6 @@
 # UMS-AIO (Universal Media Server - All In One)
 
-A portable Docker-based media server stack including Jellyfin, Sonarr, Radarr, qBittorrent, Prowlarr, Whisparr, and FlareSolverr.
+A portable Docker-based media server stack including Jellyfin, Sonarr, Radarr, Lidarr, qBittorrent, Prowlarr, Whisparr, and FlareSolverr.
 
 ## Platform Setup
 
@@ -21,6 +21,7 @@ Select your operating system to get started:
 | **Jellyfin** | 8096 | Media server for streaming movies and TV shows |
 | **Sonarr** | 8989 | TV show automation and management |
 | **Radarr** | 7878 | Movie automation and management |
+| **Lidarr** | 8686 | Music automation and management |
 | **Whisparr** | 6969 | Adult content automation and management |
 | **qBittorrent** | 8080 | Torrent download client |
 | **Prowlarr** | 9696 | Indexer manager for Sonarr and Radarr |
@@ -47,6 +48,7 @@ ums-aio/
 │   ├── jellyfin/
 │   ├── sonarr/
 │   ├── radarr/
+│   ├── lidarr/
 │   ├── whisparr/
 │   ├── qbittorrent/
 │   ├── prowlarr/
@@ -54,6 +56,7 @@ ums-aio/
 └── media/                  # Media storage (gitignored)
     ├── movies/
     ├── tv_shows/
+    ├── music/
     └── downloads/
 ```
 
@@ -83,6 +86,7 @@ All services mount `./media` as `/storage`. Configure paths in each service's we
 - **Jellyfin**: Add `/storage/movies` and `/storage/tv_shows` as libraries
 - **Sonarr**: Root folder `/storage/tv_shows`, downloads `/storage/downloads`
 - **Radarr**: Root folder `/storage/movies`, downloads `/storage/downloads`
+- **Lidarr**: Root folder `/storage/music`, downloads `/storage/downloads`
 - **Whisparr**: Root folder `/storage/adult`
 - **qBittorrent**: Default save path `/storage/downloads`
 - **Prowlarr**: Configure FlareSolverr at `http://flaresolverr:8191`

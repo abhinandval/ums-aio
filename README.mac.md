@@ -72,6 +72,7 @@ This will download and start:
 - Jellyfin (Media Server)
 - Sonarr (TV Show Management)
 - Radarr (Movie Management)
+- Lidarr (Music Management)
 - Whisparr (Adult Content Management)
 - qBittorrent (Download Client)
 - Prowlarr (Indexer Manager)
@@ -86,6 +87,7 @@ Once running, access each service in your browser:
 | **Jellyfin** | http://localhost:8096 | Media server for streaming |
 | **Sonarr** | http://localhost:8989 | TV show automation |
 | **Radarr** | http://localhost:7878 | Movie automation |
+| **Lidarr** | http://localhost:8686 | Music automation |
 | **Whisparr** | http://localhost:6969 | Adult content automation |
 | **qBittorrent** | http://localhost:8080 | Torrent client |
 | **Prowlarr** | http://localhost:9696 | Indexer management |
@@ -127,6 +129,7 @@ All configuration files are stored in the `./data/` directory:
 - `./data/jellyfin/` - Jellyfin settings
 - `./data/sonarr/` - Sonarr settings
 - `./data/radarr/` - Radarr settings
+- `./data/lidarr/` - Lidarr settings
 - `./data/whisparr/` - Whisparr settings
 - `./data/qbittorrent/` - qBittorrent settings
 - `./data/prowlarr/` - Prowlarr settings
@@ -135,6 +138,7 @@ All configuration files are stored in the `./data/` directory:
 Media files go in `./media/`:
 - `./media/movies/` - Movie library
 - `./media/tv_shows/` - TV show library
+- `./media/music/` - Music library
 - `./media/downloads/` - Download directory
 
 ## Troubleshooting
@@ -183,6 +187,7 @@ ums-aio/
 │   ├── jellyfin/
 │   ├── sonarr/
 │   ├── radarr/
+│   ├── lidarr/
 │   ├── whisparr/
 │   ├── qbittorrent/
 │   ├── prowlarr/
@@ -190,6 +195,7 @@ ums-aio/
 └── media/                  # Media storage (gitignored)
     ├── movies/
     ├── tv_shows/
+    ├── music/
     └── downloads/
 ```
 
@@ -198,9 +204,10 @@ ums-aio/
 1. **Configure qBittorrent**: Set download directory to `/storage/downloads`
 2. **Configure Sonarr**: Add root folder `/storage/tv_shows`
 3. **Configure Radarr**: Add root folder `/storage/movies`
-4. **Configure Whisparr**: Add root folder `/storage/adult`
-5. **Configure Prowlarr**: Add indexers and sync with Sonarr/Radarr/Whisparr, configure FlareSolverr at `http://flaresolverr:8191`
-6. **Configure Jellyfin**: Add libraries for `/storage/movies` and `/storage/tv_shows`
+4. **Configure Lidarr**: Add root folder `/storage/music`
+5. **Configure Whisparr**: Add root folder `/storage/adult`
+6. **Configure Prowlarr**: Add indexers and sync with Sonarr/Radarr/Lidarr/Whisparr, configure FlareSolverr at `http://flaresolverr:8191`
+7. **Configure Jellyfin**: Add libraries for `/storage/movies` and `/storage/tv_shows`
 
 Enjoy your media server! 🎬📺
 

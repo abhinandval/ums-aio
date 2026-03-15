@@ -94,3 +94,17 @@ services:
     ports:
       - 8191:8191
     restart: unless-stopped
+
+  lidarr:
+    image: lscr.io/linuxserver/lidarr:latest
+    container_name: lidarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+    volumes:
+      - ./data/lidarr:/config
+      - ./media:/storage
+    ports:
+      - 8686:8686
+    restart: unless-stopped
